@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "modulus-model-linear-regression"
+version = "0.1.0"
+description = ""
+authors = ["Chris <goabonga@pm.me>"]
+readme = "README.md"
+packages = [
+  { include = "modulus", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+joblib = "^1.4.2"
+scikit-learn = "^1.5.1"
+"modulus-library" = {path = "../modulus-library", develop = true }
+
+[tool.poetry.group.api]
+optional = true
+
+[tool.poetry.group.api.dependencies]
+fastapi = "^0.114.0"
+uvicorn = "^0.30.6"
+
+[tool.poetry.group.cli]
+optional = true
+
+[tool.poetry.group.cli.dependencies]
+click = "^8.1.7"
+
+[tool.poetry.group.jupyter]
+optional = true
+
+[tool.poetry.group.jupyter.dependencies]
+jupyter = "^1.1.1"
+matplotlib = "^3.9.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+modulus-cli = "modulus.library.cli:main"
+modulus-api = "modulus.library.api:main"

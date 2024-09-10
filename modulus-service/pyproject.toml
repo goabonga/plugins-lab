@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "modulus-service"
+version = "0.1.0"
+description = ""
+authors = ["Chris <goabonga@pm.me>"]
+readme = "README.md"
+packages = [
+  { include = "modulus", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.7"
+fastapi = "^0.114.0"
+uvicorn = "^0.30.6"
+"modulus-library" = {path = "../modulus-library", develop = true }
+"modulus-model-decision-tree" = {path = "../model-decision-tree", develop = true }
+"modulus-model-linear-regression" = {path = "../model-linear-regression", develop = true }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+modulus-cli = "modulus.library.cli:main"
+modulus-api = "modulus.library.api:main"
