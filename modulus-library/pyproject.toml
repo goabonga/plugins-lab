@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "modulus-library"
+version = "0.1.0"
+description = "A lightweight and flexible library providing an abstract interface for data extraction, transformation, and machine learning workflows."
+authors = ["Chris <goabonga@pm.me>"]
+readme = "README.md"
+packages = [
+  { include = "modulus", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "^2.9.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
